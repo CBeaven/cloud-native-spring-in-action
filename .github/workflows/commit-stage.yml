@@ -1,8 +1,5 @@
 name: Commit Stage # The name of the workflow
-on: 
-  push: # The workflow is triggered when new code is pushed to the repository
-    paths:
-    - 'catalog-service'
+on: push # The workflow is triggered when new code is pushed to the repository
 
 jobs:
   build: # The job’s unique identifier
@@ -35,6 +32,7 @@ jobs:
         sarif_file: ${{ steps.scan.outputs.sarif }} #Fetches the report from the output of the previous step
     - name: Build, unit tests and integration tests
       run: |
+        cd catalog-service
         chmod +x gradlew 
         ./gradlew build
 #Ensures the Gradle wrapper is executable, solving Windows incompatibilities
