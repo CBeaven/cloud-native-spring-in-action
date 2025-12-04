@@ -14,23 +14,7 @@ jobs:
         project: 
          - 03-begin-finished/catalog-service, 
          #- 04-begin-finished/catalog-service,
-         #- 04-begin/config-service
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Set up JDK
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: 17
-          cache: gradle
-      - name: Build, unit tests and integration tests
-        run: |
-          cd ${{ matrix.project }}
-          chmod +x gradlew
-          ./gradlew build
-
-        
+         #- 04-begin/config-service   
     steps:
     - name: Checkout source code
       uses: actions/checkout@v3 #Checks out the current Git repository (catalog-service) (with current line above)
