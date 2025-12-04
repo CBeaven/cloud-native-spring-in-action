@@ -12,7 +12,8 @@ jobs:
       fail-fast: false
       matrix:
         project: 
-         - ch03-begin-finished/catalog-service, 
+         - ch03-begin-finished/catalog-service
+         #- ch03-begin-finished/catalog-service,
          #- 04-begin-finished/catalog-service,
          #- 04-begin/config-service   
     steps:
